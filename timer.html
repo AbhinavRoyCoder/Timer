@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('your-image-url');
+            background-size: cover;
+        }
+        .timer {
+            font-size: 200px;
+            color: rgb(3, 16, 153);
+            text-shadow: 2px 2px 4px #000000;
+
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="timer" id="timer">00.00:00</div>
+
+    <script>
+        var seconds = 0;
+        var timerDisplay = document.getElementById('timer');
+
+        function pad(val) { return val > 9 ? val : "0" + val; }
+
+        setInterval(function(){
+            seconds++;
+            timerDisplay.innerHTML = pad(parseInt(seconds/60,10)) + ":" + pad(seconds%60);
+        }, 1000);
+    </script>
+</body>
+</html>
